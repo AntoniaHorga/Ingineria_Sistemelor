@@ -1,3 +1,5 @@
+package lab2;
+
 public class Student {
     int numarMatricol;
     String nume;
@@ -12,6 +14,6 @@ public class Student {
     }
 
     public String toString(){
-        return "Student- "+"nr matricol: "+numarMatricol+", nume: "+nume+", prenume: "+prenume+", formatie de studiu: "+formatieDeStudiu+" -";
+        return "lab2.Student- "+"nr matricol: "+numarMatricol+", nume: "+nume+", prenume: "+prenume+", formatie de studiu: "+formatieDeStudiu+" -";
     }
 }
