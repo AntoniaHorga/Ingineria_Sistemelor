@@ -1,6 +1,6 @@
 import lab2.Student;
 
-public static boolean CautaStudent(List<Student>lista,Student cautat) {
+/*public static boolean CautaStudent(List<Student>lista,Student cautat) {
     for (Student s : lista) {
         if (s.nume.equals(cautat.nume) &&
                 s.prenume.equals(cautat.prenume) &&
@@ -9,7 +9,7 @@ public static boolean CautaStudent(List<Student>lista,Student cautat) {
         }
     }
     return false;
-}
+}*/
 
 void main() {
     //Student s1 = new Student(580, "Horga", "Antonia", "ISM");
@@ -81,7 +81,7 @@ void main() {
 
     //2.5.2
 
-    List <Student> studenti=new ArrayList<>();
+    /*List <Student> studenti=new ArrayList<>();
     studenti.add(new Student(120,"Alis","Popa","TI21/2"));
     studenti.add(new Student(112,"Maria","Popa","TI21/1"));
     studenti.add(new Student(115,"Antonia","Horga","ISM"));
@@ -113,8 +113,23 @@ void main() {
     }
 
     System.out.println();
-
+*/
     //tema
 
+    Set<Student>studenti=new HashSet<>();
+    studenti.add(new Student(120,"Alis","Popa","TI21/2"));
+    studenti.add(new Student(112,"Maria","Popa","TI21/1"));
+    studenti.add(new Student(115,"Antonia","Horga","ISM"));
+
+    Student s1=new Student(120,"Alis","Popa","TI21/2");
+    Student s2=new Student(112,"Maria","Popa","TI21/1");
+
+    if(studenti.contains(s1)){
+        System.out.println("Studentul s1 a fost gasit O(1)");
+    }
+
+    if(studenti.contains(s2)){
+        System.out.println("Studentul s2 a fost gasit O(1)");
+    }
 
 }
