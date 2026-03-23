@@ -1,0 +1,6 @@
+Student- nr matricol: 1028, nume: Ionescu, prenume: Mihai, formatie de studiu: TI132/2 -
+Student- nr matricol: 1024, nume: Mihalcea, prenume: Ioan, formatie de studiu: ISM141/1 -
+Student- nr matricol: 1027, nume: Mohanu, prenume: Paul, formatie de studiu: TI132/1 -
+Student- nr matricol: 1025, nume: Popa, prenume: Andrei, formatie de studiu: ISM141/2 -
+Student- nr matricol: 1026, nume: Popescu, prenume: Bianca, formatie de studiu: TI131/2 -
+Student- nr matricol: 1026, nume: Prodan, prenume: Anamaria, formatie de studiu: TI131/1 -

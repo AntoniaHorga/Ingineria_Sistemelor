@@ -49,7 +49,7 @@ public static void main(){
 */
 //tema
 
-Set<Student>studenti=new HashSet<>();
+/*Set<Student>studenti=new HashSet<>();
             studenti.add(new Student(120,"Alis","Popa","TI21/2"));
         studenti.add(new Student(112,"Maria","Popa","TI21/1"));
         studenti.add(new Student(115,"Antonia","Horga","ISM"));
@@ -61,7 +61,10 @@ Student s2=new Student(112,"Maria","Popa","TI21/1");
 
         System.out.println("Studenta Maria a fost gasita? "+studenti.contains(s2));
 
-        System.out.println(s1.hashCode());
+        System.out.println(s1.hashCode());*/
+
+    System.out.println("LAB 3 \n");
+
 }
 
 
