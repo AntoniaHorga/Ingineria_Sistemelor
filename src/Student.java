@@ -13,6 +13,9 @@ public class Student {
         this.formatieDeStudiu=formatieDeStudiu;
     }
 
+    public String getNume() {
+        return this.nume;
+    }
     public String toString(){
         return "Student- "+"nr matricol: "+numarMatricol+", nume: "+nume+", prenume: "+prenume+", formatie de studiu: "+formatieDeStudiu+" -";
     }
@@ -30,5 +33,10 @@ public class Student {
     public int hashCode(){
 
         return Objects.hash(numarMatricol,prenume,nume,formatieDeStudiu);
+    }
+
+    public String getFormatie() {
+
+        return this.formatieDeStudiu;
     }
 }
