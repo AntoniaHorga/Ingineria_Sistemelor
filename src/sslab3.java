@@ -2,17 +2,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 
 public class sslab3{
     public static void main(String[] args) throws IOException{
-        Path path=Paths.get("Studenti_in.txt");
+        Path path=Paths.get("src/lab3/Studenti_in.txt");
         List<String>lines=Files.readAllLines(path);
 
         List<Student>studenti=new ArrayList<>();
+        studenti=new LinkedList<>();
 
         for(String line:lines) {
             String[] parts = line.split(",");
@@ -41,7 +40,7 @@ public class sslab3{
         Files.write(out,output);
 
         //tema de casa
-        Collections.sort(studenti,(s1,s2) -> {
+        Collections.sort(studenti, (s1,s2) -> {
             int cmp = s1.formatieDeStudiu.compareTo(s2.formatieDeStudiu);
 
             if (cmp == 0) {
@@ -50,6 +49,12 @@ public class sslab3{
             return cmp;
 
         });
+
+        studenti.sort(
+                Comparator.comparing(Student::getFormatie).thenComparing(Student::getNume)
+        );
+
+
         Path out2=Paths.get("studenti_out_sorted.txt");
         List<String>output2=new ArrayList<>();
 
@@ -58,5 +63,4 @@ public class sslab3{
         }
         Files.write(out2,output2);
     }
-//
 }
