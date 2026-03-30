@@ -7,7 +7,7 @@ import java.util.*;
 
 public class sslab3{
     public static void main(String[] args) throws IOException{
-        Path path=Paths.get("src/lab3/Studenti_in.txt");
+        Path path=Paths.get("Studenti_in.txt");
         List<String>lines=Files.readAllLines(path);
 
         List<Student>studenti=new ArrayList<>();

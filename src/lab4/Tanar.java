@@ -10,7 +10,7 @@ public class Tanar {
         this.age=age;
         this.address=address;
     }
-    public String ToString(){
+    public String toString(){
         return "Tanar- nume: "+name+", varsta: "+age+", adresa: "+address+" -";
     }
 }

@@ -39,5 +39,9 @@ public class AppLab4 {
             Tanar t=new Tanar(nume,varsta,adresa);
             tineri.put(nume,t);
         }
+        System.out.println("Tineri: \n");
+        for(String key:tineri.keySet()){
+            System.out.println(tineri.get(key));
+        }
     }
 }
