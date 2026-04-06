@@ -1,0 +1,4 @@
+Student- nr matricol: 1024, nume: Mihalcea, prenume: Ioan, formatie de studiu: ISM41/1, nota: 9.8 - bursa: 801.1
+Student- nr matricol: 1025, nume: Popa, prenume: Andrei, formatie de studiu: ISM41/2, nota: 8.7 - bursa: 725.5
+Student- nr matricol: 1026, nume: Prodan, prenume: Anamaria, formatie de studiu: TI31/1, nota: 8.9 - bursa: 745.5
+Student- nr matricol: 1029, nume: Popescu, prenume: Bianca, formatie de studiu: TI31/1, nota: 9.1 - bursa: 780.8
