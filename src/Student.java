@@ -16,6 +16,14 @@ public class Student {
         this.formatieDeStudiu=formatieDeStudiu;
     }
 
+    public Student(int numarMatricol, String prenume, String nume, String formatieDeStudiu,double nota){
+        this.numarMatricol=numarMatricol;
+        this.prenume=prenume;
+        this.nume=nume;
+        this.formatieDeStudiu=formatieDeStudiu;
+        this.nota=nota;
+    }
+
     public void setNota(double nota){
         this.nota=nota;
     }
@@ -54,5 +62,17 @@ public class Student {
     public String getFormatie() {
 
         return this.formatieDeStudiu;
+    }
+
+    public double getNumarMatricol() {
+        return this.numarMatricol;
+    }
+
+    public String getPrenume(){
+        return this.prenume;
+    }
+
+    public double getNota(){
+        return this.nota;
     }
 }

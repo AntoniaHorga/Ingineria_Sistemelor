@@ -1,7 +1,7 @@
-package lab8;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -90,9 +90,69 @@ public class lab8Main {
         }
     }
 
+    public static void writeToXls(List<Student> students, String fileName) {
+        try (Workbook workbook = new XSSFWorkbook()) {
+
+            Sheet sheet = workbook.createSheet();
+            int rowNum = 0;
+
+            for (Student s : students) {
+                Row row = sheet.createRow(rowNum++);
+
+                row.createCell(0).setCellValue(s.getNumarMatricol());
+                row.createCell(1).setCellValue(s.getNume());
+                row.createCell(2).setCellValue(s.getPrenume());
+                row.createCell(3).setCellValue(s.getFormatie());
+                row.createCell(4).setCellValue(s.getNota());
+            }
+
+            FileOutputStream fos = new FileOutputStream(fileName);
+            workbook.write(fos);
+            fos.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static List<Student> readFromXls(String fileName) {
+        List<Student> list = new ArrayList<>();
+
+        try (FileInputStream fis = new FileInputStream(fileName);
+             Workbook workbook = new XSSFWorkbook(fis)) {
+
+            Sheet sheet = workbook.getSheetAt(0);
+
+            for (Row row : sheet) {
+                int nrMatricol = (int) row.getCell(0).getNumericCellValue();
+                String prenume = row.getCell(1).getStringCellValue();
+                String nume = row.getCell(2).getStringCellValue();
+                String formatie = row.getCell(3).getStringCellValue();
+                double nota = (double) row.getCell(4).getNumericCellValue();
+
+                list.add(new Student(nrMatricol,prenume,nume,formatie,nota));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
     void main(){
         readExcel("laborator8_input.xlsx");
 
         copyAndAverage("laborator8_input.xlsx","laborator8_output2.xlsx");
+
+        List<Student> studenti=new ArrayList<>();
+        studenti.add(new Student(1024,"Ioan","Mihalcea","ISM41/1",9.8));
+        studenti.add(new Student(1025,"Andrei","Popa","ISM41/2",8.7));
+        studenti.add(new Student(1026,"Anamaria","Prodan","TI31/1",8.9));
+        studenti.add(new Student(1029,"Bianca","Popescu","TI31/1",9.1));
+        writeToXls(studenti,"lab8_studenti.out.xlsx");
+
+        readFromXls("lab8_studenti.out.xlsx");
+
     }
 }
