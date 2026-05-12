@@ -22,7 +22,29 @@ public class AplictieCuStrategy {
         exporter.startExport(strategyConsola,studenti);
 
         //b: txt
+        IstudentiExport strategyTxt=new StudentiInFisierText("studenti.txt");
+        exporter.startExport(strategyTxt,studenti);
 
+        //c: xlsx
+        IstudentiExport strategyExcel =
+                new StudentiInFisierXlsx(
+                        "studenti.xlsx");
+
+        exporter.startExport(
+                strategyExcel,
+                studenti);
+
+
+        IstudentiImport importTxt =
+                new StudentiDinFisierText(
+                        "studenti.txt");
+
+        List<Student> lista =
+                importTxt.doImport();
+
+        for(Student s : lista) {
+            System.out.println(s);
+        }
 
     }
 }
