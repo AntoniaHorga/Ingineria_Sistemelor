@@ -46,5 +46,16 @@ public class AplictieCuStrategy {
             System.out.println(s);
         }
 
+        IstudentiExport strategyConsola2 =
+                new TimeExporterDecorator(
+                        new StudentiInConsola());
+
+        exporter.startExport(strategyConsola2, studenti);
+
+        IstudentiExport strategyTxt2 =
+                new TimeExporterDecorator(
+                        new StudentiInFisierText("studenti.txt"));
+
+        exporter.startExport(strategyTxt2, studenti);
     }
 }
